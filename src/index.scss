@@ -1,0 +1,145 @@
+:root {
+    font-family: "Nunuto", "Arial", "sans-serif", "system-ui";
+    font-style: normal;
+    font-optical-sizing: auto;
+    line-height: 1.5;
+    font-weight: 400;
+    background-color: var(--bg-lt-c);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    scroll-behavior: smooth;
+
+    --primary-c: rgba(186, 226, 242, 1);
+    --primary-lt-c: rgba(204, 233, 245, 1);
+    --primary-ltx-c: rgba(212, 237, 247, 1);
+    --primary-da-c: rgba(169, 219, 239, 1);
+
+    --secondary-c: rgba(213, 173, 215, 1);
+    --secondary-lt-c: rgba(218, 183, 220, 1);
+    --secondary-da-c: rgba(207, 163, 210, 1);
+
+    --accent-c: rgba(225, 204, 173, 1);
+    --accent-lt-c: rgba(245, 228, 204, 1);
+    --accent-da-c: rgba(219, 195, 158, 1);
+
+    --bg-c: rgba(233, 248, 226, 1);
+    --bg-lt-c: rgba(238, 249, 233, 1);
+    --bg-da-c: rgba(228, 246, 219, 1);
+
+    --text-c: rgba(28, 28, 28, 1);
+    --text-lt-c: rgba(30, 30, 30, 1);
+    --text-da-c: rgba(26, 26, 26, 1);
+
+    --shadow-c: rgba(150, 150, 150, 0.80);
+
+    --success-c: rgba(76, 192, 134, 1);
+    --warning-c: rgb(255, 234, 97, 1);
+    --danger-c: rgb(255, 105, 97, 1);
+    --info-c: rgb(76, 157, 250, 1);
+
+    --pink: #ff64f9;
+    --red: #ff6565;
+    --orange: #ff6d1b;
+    --yellow: #ffee55;
+    --green: #5bff89;
+    --blue: #4d8aff;
+    --purple: #6b5fff;
+    --gold: #ffd700;
+
+    --hero-bg-c: rgba(212, 237, 247, 1);
+}
+
+[data-theme="night"] {
+    --primary-c: rgba(16, 64, 128, 1);
+    --primary-lt-c: rgba(17, 69, 136, 1);
+    --primary-da-c: rgba(15, 60, 118, 1);
+
+    --secondary-c: rgba(215, 174, 226, 1);
+    --secondary-lt-c: rgba(219, 184, 229, 1);
+    --secondary-da-c: rgba(208, 161, 221, 1);
+
+    --accent-c: rgba(225, 204, 173, 1);
+    --accent-lt-c: rgba(245, 228, 204, 1);
+    --accent-da-c: rgba(219, 195, 158, 1);
+
+    --bg-c: rgba(16, 16, 16, 1);
+    --bg-lt-c: rgba(24, 24, 24, 1);
+    --bg-da-c: rgba(8, 8, 8, 1);
+
+    --text-c: rgba(251, 250, 249, 1);
+    --text-lt-c: rgba(252, 251, 250, 1);
+    --text-da-c: rgba(250, 249, 248, 1);
+
+    --shadow-c: rgba(150, 150, 150, 0.80);
+    --shadow-lt-c: rgba(140, 140, 140, 0.8);
+    --shadow-da-c: rgb(160, 160, 160, 0.8);
+
+    --glow-c: rgba(238, 248, 252, 0.40);
+
+    --hero-bg-c: rgba(184, 226, 242, 1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    max-width: 100%;
+    padding: 1rem 3%;
+
+    @media screen and (max-width: 768px) {
+        padding: 1.2rem 2%;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: var(--text-da-c);
+
+    transition: color 450ms;
+}
+
+p {
+    margin: 0;
+    color: var(--text-c);
+    transition: color 450ms;
+}
+
+.text-underline {
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        top: 90%; /* distance from the bottom */
+        left: 0;
+        background: var(--secondary-c);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.30s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink_animation {
+    animation: blink 1s infinite;
+}
